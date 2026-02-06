@@ -1,0 +1,178 @@
+{
+  "version": 1,
+  "recipes": [
+    {
+      "id": "taco",
+      "title": "Taco",
+      "servings": 4,
+      "time_minutes": 25,
+      "ingredients": [
+        { "name": "kjøttdeig", "amount": 400, "unit": "g" },
+        { "name": "tacokrydder", "amount": 1, "unit": "pose" },
+        { "name": "tortillalefse", "amount": 8, "unit": "stk" },
+        { "name": "ost", "amount": 150, "unit": "g" }
+      ],
+      "steps": ["Stek kjøttdeig", "Tilsett krydder", "Server i lefse"]
+    },
+    {
+      "id": "spaghetti-bolognese",
+      "title": "Spaghetti bolognese",
+      "servings": 4,
+      "time_minutes": 30,
+      "ingredients": [
+        { "name": "spaghetti", "amount": 400, "unit": "g" },
+        { "name": "kjøttdeig", "amount": 400, "unit": "g" },
+        { "name": "hakkede tomater", "amount": 1, "unit": "boks" }
+      ],
+      "steps": ["Kok pasta", "Stek kjøttdeig", "Tilsett tomater"]
+    },
+    {
+      "id": "kylling-wok",
+      "title": "Kyllingwok",
+      "servings": 2,
+      "time_minutes": 20,
+      "ingredients": [
+        { "name": "kyllingfilet", "amount": 300, "unit": "g" },
+        { "name": "wokgrønnsaker", "amount": 300, "unit": "g" },
+        { "name": "soyasaus", "amount": 2, "unit": "ss" }
+      ],
+      "steps": ["Stek kylling", "Tilsett grønnsaker", "Ha på soyasaus"]
+    },
+    {
+      "id": "laks-i-ovn",
+      "title": "Laks i ovn",
+      "servings": 2,
+      "time_minutes": 25,
+      "ingredients": [
+        { "name": "laksefilet", "amount": 300, "unit": "g" },
+        { "name": "sitron", "amount": 1, "unit": "stk" },
+        { "name": "salt", "amount": null, "unit": null }
+      ],
+      "steps": ["Legg laks i form", "Krydre", "Stek i ovn"]
+    },
+    {
+      "id": "omelett",
+      "title": "Omelett",
+      "servings": 1,
+      "time_minutes": 10,
+      "ingredients": [
+        { "name": "egg", "amount": 3, "unit": "stk" },
+        { "name": "melk", "amount": 1, "unit": "ss" },
+        { "name": "ost", "amount": 50, "unit": "g" }
+      ],
+      "steps": ["Visp egg", "Stek i panne", "Tilsett ost"]
+    },
+    {
+      "id": "pannekaker",
+      "title": "Pannekaker",
+      "servings": 4,
+      "time_minutes": 20,
+      "ingredients": [
+        { "name": "melk", "amount": 6, "unit": "dl" },
+        { "name": "egg", "amount": 3, "unit": "stk" },
+        { "name": "mel", "amount": 4, "unit": "dl" }
+      ],
+      "steps": ["Bland ingredienser", "Stek pannekaker"]
+    },
+    {
+      "id": "toast",
+      "title": "Ost og skinke toast",
+      "servings": 1,
+      "time_minutes": 5,
+      "ingredients": [
+        { "name": "brød", "amount": 2, "unit": "skiver" },
+        { "name": "ost", "amount": 2, "unit": "skiver" },
+        { "name": "skinke", "amount": 2, "unit": "skiver" }
+      ],
+      "steps": ["Legg fyll på brød", "Stek i toastjern"]
+    },
+    {
+      "id": "ris-og-kylling",
+      "title": "Ris med kylling",
+      "servings": 2,
+      "time_minutes": 25,
+      "ingredients": [
+        { "name": "ris", "amount": 2, "unit": "dl" },
+        { "name": "kyllingfilet", "amount": 300, "unit": "g" }
+      ],
+      "steps": ["Kok ris", "Stek kylling", "Server sammen"]
+    },
+    {
+      "id": "tomatsuppe",
+      "title": "Tomatsuppe",
+      "servings": 3,
+      "time_minutes": 15,
+      "ingredients": [
+        { "name": "hakkede tomater", "amount": 2, "unit": "bokser" },
+        { "name": "vann", "amount": 5, "unit": "dl" }
+      ],
+      "steps": ["Kok opp tomater og vann", "Smak til"]
+    },
+    {
+      "id": "pasta-pesto",
+      "title": "Pasta med pesto",
+      "servings": 2,
+      "time_minutes": 15,
+      "ingredients": [
+        { "name": "pasta", "amount": 250, "unit": "g" },
+        { "name": "pesto", "amount": 3, "unit": "ss" }
+      ],
+      "steps": ["Kok pasta", "Bland inn pesto"]
+    },
+    {
+      "id": "egg-og-bacon",
+      "title": "Egg og bacon",
+      "servings": 2,
+      "time_minutes": 10,
+      "ingredients": [
+        { "name": "egg", "amount": 4, "unit": "stk" },
+        { "name": "bacon", "amount": 150, "unit": "g" }
+      ],
+      "steps": ["Stek bacon", "Stek egg"]
+    },
+    {
+      "id": "grillet-kylling-salat",
+      "title": "Kyllingsalat",
+      "servings": 2,
+      "time_minutes": 20,
+      "ingredients": [
+        { "name": "kyllingfilet", "amount": 300, "unit": "g" },
+        { "name": "salat", "amount": 1, "unit": "pose" }
+      ],
+      "steps": ["Stek kylling", "Bland med salat"]
+    },
+    {
+      "id": "fiskepinner",
+      "title": "Fiskepinner",
+      "servings": 2,
+      "time_minutes": 15,
+      "ingredients": [
+        { "name": "fiskepinner", "amount": 10, "unit": "stk" },
+        { "name": "poteter", "amount": 4, "unit": "stk" }
+      ],
+      "steps": ["Stek fiskepinner", "Kok poteter"]
+    },
+    {
+      "id": "nudler",
+      "title": "Nudler",
+      "servings": 1,
+      "time_minutes": 5,
+      "ingredients": [
+        { "name": "nudler", "amount": 1, "unit": "pakke" },
+        { "name": "vann", "amount": null, "unit": null }
+      ],
+      "steps": ["Kok nudler"]
+    },
+    {
+      "id": "havregrøt",
+      "title": "Havregrøt",
+      "servings": 1,
+      "time_minutes": 5,
+      "ingredients": [
+        { "name": "havregryn", "amount": 1, "unit": "dl" },
+        { "name": "melk", "amount": 2, "unit": "dl" }
+      ],
+      "steps": ["Kok havregryn og melk"]
+    }
+  ]
+}
