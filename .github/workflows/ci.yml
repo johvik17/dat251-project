@@ -20,7 +20,7 @@ jobs:
 
       - name: Build backend with Gradle
         working-directory: backend
-        run: ls gradle/wrapper &&  ./gradlew build
+        run: ./gradlew build
 
   frontend:
     runs-on: ubuntu-latest
