@@ -86,4 +86,8 @@ HELP.md
 build/
 !backend/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
+
 !**/src/test/**/build/
+
+node_modules/
+
