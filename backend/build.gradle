@@ -1,33 +1,49 @@
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '4.0.2'
-	id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'org.springframework.boot' version '3.4.2'
+    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'com.example'
-version = '0.0.1-SNAPSHOT'
 description = 'Repo for the food app GreenGafl'
 
+def getGitVersion() {
+    try {
+        def tag = "git describe --tags --abbrev=0".execute().text.trim()
+        if (tag) {
+            return tag
+        }
+        def commit = "git rev-parse --short HEAD".execute().text.trim()
+        return "0.0.0-${commit}"
+    } catch (Exception ignored) {
+        return "0.0.0-unknown"
+    }
+}
+
+version = getGitVersion()
+
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter' // valgfri, men ok å ha
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:3.0.0-RC1'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
