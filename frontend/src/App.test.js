@@ -9,6 +9,6 @@ test('renders greengafl landing page actions', () => {
   ).toBeInTheDocument();
   expect(screen.getAllByRole('button', { name: /register/i }).length).toBeGreaterThan(0);
   expect(screen.getAllByRole('button', { name: /log in/i }).length).toBeGreaterThan(0);
-  expect(screen.getByText(/personalize suggestions/i)).toBeInTheDocument();
-  expect(screen.getByText(/get suggestions/i)).toBeInTheDocument();
+  expect(screen.getByText(/create a user to try out personalized dinner suggestions/i)).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /why use greengafl/i })).toBeInTheDocument();
 });

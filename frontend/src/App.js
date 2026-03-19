@@ -2,19 +2,19 @@ import './App.css';
 
 const featureCards = [
   {
-    title: 'Personalize suggestions',
+    title: 'Personalized meals',
     description:
-      'Set dietary needs, ingredient preferences, cooking time, and difficulty to shape better dinner ideas.',
+      'Set dietary needs, ingredient preferences, cooking time, and difficulty to shape dinner ideas around you.',
   },
   {
-    title: 'Get suggestions fast',
+    title: 'Flexible preferences',
     description:
-      'Jump straight to a curated list of dinner options when you need an answer quickly after a long day.',
+      'Build a profile that respects restrictions and makes it easier to find meals that actually fit.',
   },
   {
-    title: 'Built to learn your taste',
+    title: 'Easy dinner inspiration',
     description:
-      'Liked dinners can later help Greengafl improve what it recommends and keep ideas feeling fresh.',
+      'When you are not sure what to cook, Greengafl is meant to make the choice feel quicker and lighter.',
   },
 ];
 
@@ -25,7 +25,7 @@ function App() {
       <div className="page-glow page-glow-right" aria-hidden="true" />
 
       <header className="topbar">
-        <div>
+        <div className="brand-block">
           <p className="brand-mark">Greengafl</p>
           <p className="brand-subtitle">Easy dinner suggestions with room to personalize.</p>
         </div>
@@ -50,21 +50,17 @@ function App() {
             grows into a smarter way to choose dinner.
           </p>
 
+          <p className="account-prompt">
+            Create a user to try out personalized dinner suggestions and access the app&apos;s
+            recommendation features.
+          </p>
+
           <div className="hero-actions">
             <button type="button" className="primary-button large-button">
               Register
             </button>
             <button type="button" className="ghost-button large-button">
               Log in
-            </button>
-          </div>
-
-          <div className="secondary-actions">
-            <button type="button" className="feature-link">
-              Personalize suggestions
-            </button>
-            <button type="button" className="feature-link">
-              Get suggestions
             </button>
           </div>
         </section>
@@ -94,7 +90,7 @@ function App() {
       <section className="feature-section">
         <div className="section-heading">
           <p className="eyebrow">What the app offers</p>
-          <h2>A simple front page now, a stronger meal assistant later.</h2>
+          <h2>Why use Greengafl?</h2>
         </div>
 
         <div className="feature-grid">
