@@ -8,6 +8,7 @@ import You from "./you";
 import RecipePage from "./RecipePage";
 import RecipeDetail from "./RecipeDetail";
 import reportWebVitals from "./reportWebVitals";
+import Register from "./register";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 root.render(
@@ -16,6 +17,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/you" element={<You />} />
         <Route path="/recipes" element={<RecipePage />} />
         <Route path="/recipes-preview" element={<RecipePage requireAuth={false} />} />

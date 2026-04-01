@@ -75,7 +75,11 @@ function App() {
           >
             Log in
           </button>
-          <button type="button" className="primary-button">
+          <button
+            type="button"
+            className="primary-button"
+            onClick={() => navigate("/Register")}
+          >
             Register
           </button>
         </nav>
