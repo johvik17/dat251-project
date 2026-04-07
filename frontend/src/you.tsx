@@ -40,12 +40,30 @@ export default function You() {
   }, [navigate]);
 
   useEffect(() => {
-    if (!authData) return;
+    let cancelled = false;
+
+    if (!authData) return () => {
+      cancelled = true;
+    };
+
     async function loadFavorites() {
-      const data = await getFavorites();
-      setFavorites(data);
+      try {
+        const data = await getFavorites();
+        if (!cancelled) {
+          setFavorites(data);
+        }
+      } catch {
+        if (!cancelled) {
+          setFavorites([]);
+        }
+      }
     }
+
     loadFavorites();
+
+    return () => {
+      cancelled = true;
+    };
   }, [authData]);
 
   async function handleLogout() {
