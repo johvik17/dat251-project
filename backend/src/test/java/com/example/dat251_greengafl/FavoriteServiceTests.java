@@ -1,5 +1,6 @@
 package com.example.dat251_greengafl;
 
+import com.example.dat251_greengafl.dto.RecipeSummaryDto;
 import com.example.dat251_greengafl.model.Difficulty;
 import com.example.dat251_greengafl.model.Recipe;
 import com.example.dat251_greengafl.model.User;
@@ -64,7 +65,7 @@ class FavoriteServiceTests {
         try {
             favoriteService.addFavorite(user.getUsername(), recipe1.getId());
             favoriteService.addFavorite(user.getUsername(), recipe2.getId());
-            List<Recipe> favorites = favoriteService.getFavorites(user.getUsername());
+            List<RecipeSummaryDto> favorites = favoriteService.getFavorites(user.getUsername());
             assertThat(favorites).hasSize(2);
             assertThat(favorites).extracting("id")
                     .containsExactlyInAnyOrder(recipe1.getId(), recipe2.getId());
@@ -79,7 +80,7 @@ class FavoriteServiceTests {
     void testGetFavoritesEmptyForNewUser() {
         User user = registerUser("fav-svc-u4", "fav-svc-u4@test.com");
         try {
-            List<Recipe> favorites = favoriteService.getFavorites(user.getUsername());
+            List<RecipeSummaryDto> favorites = favoriteService.getFavorites(user.getUsername());
             assertThat(favorites).isEmpty();
         } finally {
             userService.deleteById(user.getId());

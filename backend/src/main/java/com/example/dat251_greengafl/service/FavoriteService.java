@@ -1,5 +1,6 @@
 package com.example.dat251_greengafl.service;
 
+import com.example.dat251_greengafl.dto.RecipeSummaryDto;
 import com.example.dat251_greengafl.entities.UserEntity;
 import com.example.dat251_greengafl.model.Recipe;
 import com.example.dat251_greengafl.repo.RecipeRepo;
@@ -23,9 +24,15 @@ public class FavoriteService {
     }
 
     @Transactional(readOnly = true)
-    public List<Recipe> getFavorites(String username) {
+    public List<RecipeSummaryDto> getFavorites(String username) {
         return userRepo.findByUsername(username)
-                .map(user -> List.copyOf(user.getFavoriteRecipes()))
+                .map(user -> user.getFavoriteRecipes().stream()
+                        .map(r -> new RecipeSummaryDto(
+                                r.getId(),
+                                r.getName(),
+                                r.getCookingTime(),
+                                r.getDifficulty() != null ? r.getDifficulty().name() : null))
+                        .toList())
                 .orElse(List.of());
     }
 

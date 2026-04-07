@@ -1,6 +1,6 @@
 package com.example.dat251_greengafl.controller;
 
-import com.example.dat251_greengafl.model.Recipe;
+import com.example.dat251_greengafl.dto.RecipeSummaryDto;
 import com.example.dat251_greengafl.service.FavoriteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ public class FavoriteController {
     }
 
     @GetMapping
-    public List<Recipe> getFavorites(Authentication authentication) {
+    public List<RecipeSummaryDto> getFavorites(Authentication authentication) {
         return favoriteService.getFavorites(authentication.getName());
     }
 
@@ -33,7 +33,6 @@ public class FavoriteController {
         return ResponseEntity.ok(favorited);
     }
 
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{recipeId}")
     public ResponseEntity<Void> addFavorite(
             @PathVariable UUID recipeId,
@@ -44,7 +43,6 @@ public class FavoriteController {
                 : ResponseEntity.notFound().build();
     }
 
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{recipeId}")
     public ResponseEntity<Void> removeFavorite(
             @PathVariable UUID recipeId,

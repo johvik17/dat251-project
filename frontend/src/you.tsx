@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getAuthStatus, logout } from "./auth";
-import { getFavorites } from "./favorites";
-import { Recipe } from "./api";
+import { getFavorites, RecipeSummary } from "./favorites";
 import logo from "./assets/greengaflLogo.png";
 import "./you.css";
 import "./App.css";
@@ -10,7 +9,7 @@ import "./App.css";
 export default function You() {
   const navigate = useNavigate();
   const [authData, setAuthData] = useState<any>(null);
-  const [favorites, setFavorites] = useState<Recipe[]>([]);
+  const [favorites, setFavorites] = useState<RecipeSummary[]>([]);
 
   useEffect(() => {
     let cancelled = false;

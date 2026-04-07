@@ -1,8 +1,13 @@
-import { Recipe } from "./api";
-
 const API_BASE = "http://localhost:8080";
 
-export async function getFavorites(): Promise<Recipe[]> {
+export interface RecipeSummary {
+  id: string;
+  name: string;
+  cookingTime?: number;
+  difficulty?: string;
+}
+
+export async function getFavorites(): Promise<RecipeSummary[]> {
   const res = await fetch(`${API_BASE}/api/favorites`, {
     credentials: "include",
   });
