@@ -62,11 +62,15 @@ export default function RecipeDetail() {
     setFavoriteLoading(true);
     try {
       if (favorited) {
-        await removeFavorite(id);
-        setFavorited(false);
+        const success = await removeFavorite(id);
+        if (success) {
+          setFavorited(false);
+        }
       } else {
-        await addFavorite(id);
-        setFavorited(true);
+        const success = await addFavorite(id);
+        if (success) {
+          setFavorited(true);
+        }
       }
     } finally {
       setFavoriteLoading(false);
